@@ -1,0 +1,15 @@
+# Dependabot: keep the GitHub Actions used by the workflows current, monthly.
+# Python and Docker updates are handled by bumping OPENSPP_REF in .env and the
+# pinned versions in docker/, not by Dependabot.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "deps(actions)"
